@@ -22,13 +22,13 @@ let css = Number(prompt("Please enter your CSS marks:"));
 let cssGrade;
 if (css >= 80) {
   cssGrade = "Grade A+";
-} else if (html >= 70) {
+} else if (css >= 70) {
   cssGrade = "Grade A";
-} else if (html >= 60) {
+} else if (css >= 60) {
   cssGrade = "Grade C";
-} else if (html >= 50) {
+} else if (css >= 50) {
   cssGrade = "Grade D";
-} else if (html >= 40) {
+} else if (css >= 40) {
   cssGrade = "Grade Fail!";
 }
 let hackhathon = prompt("Please enter your mini Hackathon marks:");
