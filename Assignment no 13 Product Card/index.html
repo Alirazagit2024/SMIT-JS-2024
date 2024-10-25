@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List 2024</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🛒 Product Items</h1>
+        <div class="product-list">
+            <div class="product">
+                <img src="/Images/watch.png" alt="Product 1">
+                <div>
+                    <p class="product-name">Smart Watch</p>
+                    <p class="product-price" data-price="49">Price: $49 <del>$69</del></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/Images/pc.png" alt="Product 2">
+                <div>
+                    <p class="product-name">Gaming PC</p>
+                    <p class="product-price" data-price="99">Price: $99 <del>$129</del></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="/Images/chair.png" alt="Product 3">
+                <div>
+                    <p class="product-name">Gaming Chair</p>
+                    <p class="product-price" data-price="79">Price: $79 <del>$99</del></p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Cart Total</h2>
+            <p>Total Price: $<span id="total-price">0</span></p>
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

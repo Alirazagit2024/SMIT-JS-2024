@@ -1,0 +1,126 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px 0 10px 0;
+  margin: 0 auto;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  max-width: 1280px;
+  width: 90%;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.product-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.product {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid white;
+}
+
+.product img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0px 0px 12px #ffffff);
+}
+
+.product-name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.product-price {
+  color: #cecece;
+  font-size: 17px;
+}
+
+.product-price del {
+  color: gray;
+  font-size: 14px;
+}
+
+.add-to-cart {
+  padding: 8px 15px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #2563eb;
+}
+
+.cart {
+  border: 1px solid white;
+}
+
+@media (max-width: 427px) {
+  .product-list {
+    flex-wrap: wrap;
+  }
+}
+
+.cart {
+  margin-top: 20px;
+  text-align: center;
+  padding: 15px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#total-price {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#clear-cart {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#clear-cart:hover {
+  background-color: #dc2626;
+}
