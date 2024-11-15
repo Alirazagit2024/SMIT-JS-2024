@@ -1,0 +1,254 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  background-color: #121212; /* Dark background */
+  color: #fff; /* Light text */
+}
+
+body.dark-theme header h1,
+body.dark-theme .section h2 {
+  color: #fff; /* White headings in dark mode */
+}
+
+body.dark-theme .input-group input,
+body.dark-theme .input-group textarea {
+  background-color: #333; /* Dark input fields */
+  color: #fff; /* Light text in input fields */
+  border: 1px solid #fff; /* White border for inputs */
+}
+
+body.dark-theme .form-actions button {
+  background-color: white; /* Button color */
+  color: black;
+}
+body.dark-theme .form-actions button:hover {
+  background-color: black; /* Button color */
+  color: white;
+}
+
+/* Form border change for dark theme */
+body.dark-theme form {
+  background-color: #333;
+  border: 1px solid #fff; /* White border around the form */
+}
+
+/* Additional styling for dark mode */
+body.dark-theme .resume-content {
+  background-color: #1f1f1f; /* Dark background for resume sections */
+  color: #fff; /* Light text */
+  border: 1px solid #fff;
+}
+body.dark-theme .form-actions button {
+  background-color: white;
+  color: black;
+}
+
+body.dark-theme .resume-section strong {
+  color: #fff; /* White text for strong elements */
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.container {
+  width: 65%;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #2d88d9;
+}
+
+p {
+  font-size: 18px;
+  color: #777;
+}
+
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #2d88d9;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #2d88d9;
+  background-color: #fff;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form-actions button {
+  padding: 15px 25px;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: 0.3s;
+}
+
+.form-actions button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+/* Resume Output Styling */
+.resume-content {
+  display: none;
+  margin-top: 40px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+.pro {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+.resume-section {
+  margin-bottom: 25px;
+}
+
+.resume-section h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #2d88d9;
+  text-transform: uppercase;
+}
+
+.resume-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.resume-section strong {
+  font-weight: 600;
+}
+
+.resume-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 10px;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions button {
+    padding: 12px 20px;
+    width: 100%;
+  }
+}

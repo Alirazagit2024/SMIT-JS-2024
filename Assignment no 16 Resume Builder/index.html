@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Professional Resume Builder</h1>
+            <p>Create a polished and professional resume quickly</p>
+        </header>
+
+        <!-- Resume Form -->
+        <form id="resumeForm">
+
+            <!-- Profile Image Section -->
+            <section class="section">
+                <div class="top">
+                    <h2>Profile Image</h2>
+                    <button type="button" onclick="toggleTheme()">Change Theme</button>
+                </div>
+                <div class="input-group">
+                    <label for="profileImage">Upload your profile image:</label>
+                    <input type="file" id="profileImage" accept="image/*" onchange="previewImage()">
+                    <img id="imagePreview" style="max-width: 150px; margin-top: 10px; border-radius: 50%;" />
+                </div>
+            </section>
+
+            <!-- Personal Info Section -->
+            <section class="section">
+                <h2>Personal Information</h2>
+                <div class="input-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" placeholder="Enter your address" required></textarea>
+                </div>
+            </section>
+
+            <!-- Career Objective -->
+            <section class="input-group">
+                <h2>Career Objective</h2>
+                <textarea id="careerObjective" placeholder="Write your career objective" rows="4" required></textarea>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2>Education</h2>
+                <div class="input-group">
+                    <label for="degree">Degree:</label>
+                    <input type="text" id="degree" placeholder="Your degree" required>
+                </div>
+                <div class="input-group">
+                    <label for="institution">Institution:</label>
+                    <input type="text" id="institution" placeholder="Name of the institution" required>
+                </div>
+                <div class="input-group">
+                    <label for="completionYear">Year of Completion:</label>
+                    <input type="number" id="completionYear" placeholder="Year" required>
+                </div>
+                <div class="input-group">
+                    <label for="grade">Grade/Percentage:</label>
+                    <input type="text" id="grade" placeholder="Your grade or percentage" required>
+                </div>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="section">
+                <h2>Work Experience</h2>
+                <div class="input-group">
+                    <label for="jobTitle">Job Title:</label>
+                    <input type="text" id="jobTitle" placeholder="Your job title" required>
+                </div>
+                <div class="input-group">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" id="companyName" placeholder="Name of the company" required>
+                </div>
+                <div class="input-group">
+                    <label for="duration">Duration:</label>
+                    <input type="text" id="duration" placeholder="How long you worked" required>
+                </div>
+                <div class="input-group">
+                    <label for="jobDescription">Job Description:</label>
+                    <textarea id="jobDescription" placeholder="Describe your job responsibilities"></textarea>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="input-group">
+                <h2>Skills</h2>
+                <textarea id="skills" placeholder="List your skills (comma separated)" rows="3" required></textarea>
+            </section>
+
+            <!-- Languages Section -->
+            <section class="input-group">
+                <h2>Languages</h2>
+                <textarea id="languages" placeholder="Languages you speak (comma separated)" rows="3"
+                    required></textarea>
+            </section>
+
+            <!-- Additional Sections -->
+            <section class="section">
+                <h2>Additional Sections (Optional)</h2>
+                <div class="input-group">
+                    <label for="hobbies">Hobbies:</label>
+                    <textarea id="hobbies" placeholder="Your hobbies"></textarea>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="button" onclick="createResume()">Generate Resume</button>
+                <button type="button" onclick="resetForm()">Clear Form</button>
+            </div>
+        </form>
+
+        <!-- Resume Output -->
+        <div id="resumeOutput" class="resume-content">
+            <div class="top">
+                <h2>Profile Image</h2>
+                <button type="button" onclick="toggleTheme()">Change Theme</button>
+            </div>
+
+            <div class="resume-section pro">
+                <div>
+                    <img id="profileImg" style="max-width: 150px; border-radius: 50%;" />
+                </div>
+                <div>
+                    <p><strong>Email:</strong> <span id="resumeEmail"></span></p>
+                    <p><strong>Phone:</strong> <span id="resumePhone"></span></p>
+                    <p><strong>Address:</strong> <span id="resumeAddress"></span></p>
+                </div>
+            </div>
+
+
+            <div class="resume-section">
+                <h2>Career Objective</h2>
+                <p id="resumeObjective"></p>
+            </div>
+
+            <div class="resume-section">
+                <h2>Education</h2>
+                <p><strong>Degree:</strong> <span id="resumeDegree"></span></p>
+                <p><strong>Institution:</strong> <span id="resumeInstitution"></span></p>
+                <p><strong>Year of Completion:</strong> <span id="resumeYear"></span></p>
+                <p><strong>Grade:</strong> <span id="resumeGrade"></span></p>
+            </div>
+
+            <div class="resume-section">
+                <h2>Work Experience</h2>
+                <p><strong>Job Title:</strong> <span id="resumeJobTitle"></span></p>
+                <p><strong>Company Name:</strong> <span id="resumeCompany"></span></p>
+                <p><strong>Duration:</strong> <span id="resumeDuration"></span></p>
+                <p><strong>Job Description:</strong> <span id="resumeDescription"></span></p>
+            </div>
+
+            <div class="resume-section">
+                <h2>Skills</h2>
+                <ul id="resumeSkills"></ul>
+            </div>
+
+            <div class="resume-section">
+                <h2>Languages</h2>
+                <ul id="resumeLanguages"></ul>
+            </div>
+
+            <div class="resume-section">
+                <h2>Hobbies</h2>
+                <p id="resumeHobbies"></p>
+            </div>
+
+            <div class="form-actions">
+                <button onclick="window.print()">Print Resume</button>
+                <button onclick="resetForm()">Back to Form</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="assets/main.js"></script>
+</body>
+
+</html>
