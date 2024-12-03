@@ -1,0 +1,116 @@
+/* Reset some basic styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    height: 100vh;
+    /* padding: 4px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center everything in the container */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    /* margin-top: 10px; */
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+.container h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: #ffcc00;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #ccc;
+}
+#fromCurrency,#toCurrency {
+    cursor: pointer;
+}
+#fromCurrency:focus,#toCurrency:focus {
+    background-color: #468aff;
+}
+
+
+/* Inputs and Select Boxes */
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#amount {
+    width: 95%; 
+}
+
+/* Buttons */
+button {
+    width: 98%;
+    padding: 10px;
+    margin: 0 1%;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #ff8800, #ff6347);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff6347, #ff8800);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* Result Section */
+#result {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
