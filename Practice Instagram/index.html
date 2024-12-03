@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Post</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main>
+  <div class="container">
+  <div class="heading-theme">
+    <h1>AR</h1>
+    <button id="theme"><i class="fa-solid fa-sun"></i></button>
+  </div>
+  <div class="card">
+    <div class="logo">
+     <div class="logo-l">
+      <a href="/assets/change-pic.html"><img src="/assets/images/pic.jpg" alt="logo"></a>
+      <h2 class="card-title">Emily_ <div class="approve"><i class="fa-solid fa-check"></i></div></h2>
+     </div>
+     <div class="logo-r">
+      <a href="assets/msg.html" id="link"> <i class="fa-brands fa-facebook-messenger"></i></a>
+      <i id="menu" class="fa-solid hy fa-ellipsis-vertical"></i>
+      <div class="option">
+        <ul>
+          <li>Saved</li>
+          <hr class="line"/>
+          <li>Notifications</li>
+          <hr class="line"/>
+          <li>Your Activity</li>
+          <hr class="line"/>
+          <li>Settings</li>
+        </ul>
+      </div>
+     </div>
+    </div>
+    <div id="pic" class="image-container">
+      <img src="/assets/images/pic.jpg" alt="Image">
+      <div id="center-heart">
+        <i id="heart" class="fas fa-heart"></i>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-top">
+        <h2 class="card-title">Emily_ <div class="approve"><i class="fa-solid fa-check"></i></div></h2>
+        <h2 class="card-title" id="unknown">(Stranger)</h2>
+      </div>
+      <p class="card-text">Loves photography and exploring nature. Follow to see the journey!</p>
+      <div class="card-buttons">
+        <div class="icons">
+        <p id="love" style="color: black; "><i class="fa-solid fa-heart-crack"></i> 74</p>
+        <p class=" comments" style="color: black; "><i class="fa-regular fa-comment"></i></p>
+        <p class=" share"  style="color: black; "><i class="save fa-solid fa-share"></i></p>
+      </div>
+      <div>
+        <a href="#" class="btn" id="add-remove"><i class="fas fa-user-plus"></i>Add Friend</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="comments" style="margin-bottom: 30px;">
+    <ul id="msg"></ul>
+  </div>
+  <div id="input-container">
+    <input type="text" id="typing" placeholder="Add a comment">
+    <button id="send"><i class="fa-regular fa-paper-plane"></i></button>
+</div>
+</div>
+</main>
+  <script src="assets/main.js"></script>
+</body>
+</html>

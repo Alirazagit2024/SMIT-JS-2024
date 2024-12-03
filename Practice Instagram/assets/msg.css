@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#app-container {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    background: white;
+    overflow: hidden;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+#link {
+    color: black;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 4px;
+}
+#logo p {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.approve {
+    background-color: #0056b3;
+    color: white;
+    padding: 4px;
+    font-size: 0.6rem;
+    border-radius: 50%;
+  }
+
+#logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+#header .fas {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-name {
+    font-weight: bold;
+    font-size: 18px;
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 20px;
+}
+
+#msg {
+    list-style-type: none;
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    /* background-color: #0056b3; */
+    width: 100%;
+}
+
+li {
+    padding: 10px;
+    margin: 5px;
+    background-color: #e1e1e1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 75%;
+    word-wrap: break-word;
+    animation: slide-up 0.3s ease-in-out;
+}
+
+@keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }  
+
+#lmsg {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+
+#lmsg li {
+    background-color: lightblue;
+
+}
+
+#input-container {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: lightgray;
+    border-radius: 20px;
+}
+
+#input-container i {
+    font-size: 1.4rem;
+}
+
+input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    body {
+        height: 96vh;
+    }
+    #app-container {
+        height: 100%;
+    }
+
+    input {
+        width: auto;
+    }
+
+    button {
+        padding: 10px 15px;
+    }
+
+    #header .fas {
+        font-size: 16px;
+    }
+
+    #user-name {
+        font-size: 16px;
+    }
+}
