@@ -1,0 +1,105 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+  }
+  
+  /* Gallery Styles */
+  .gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Flex-wrap se images line break karke adjust hongi */
+  }
+  
+  .gallery-img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Popup Styles */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-img {
+    max-width: 90%; /* Responsive width */
+    height: 80%; /* Responsive height */
+    border: 3px solid white;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .gallery {
+      gap: 5px; /* Gap kam kar diya chhoti screen ke liye */
+    }
+  
+    .gallery-img {
+      width: 120px;
+      height: 180px; /* Images chhoti kar di */
+    }
+  
+    .popup-img {
+      max-width: 95%; /* Chhoti screen pe zyada width cover karegi */
+      max-height: 75%;
+    }
+  
+    .close {
+      font-size: 25px; /* Close button chhota kar diya */
+      top: 10px;
+      right: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery {
+      flex-direction: column; /* Images vertically align hongi */
+      align-items: center;
+    }
+  
+    .gallery-img {
+      width: 100px;
+      height: 150px; /* Aur chhoti kar di images */
+    }
+  
+    .popup-img {
+      max-width: 90%; /* Popup size ko maintain kiya */
+      height: 70%;
+    }
+  }
+  
