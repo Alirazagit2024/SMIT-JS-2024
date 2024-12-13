@@ -1,0 +1,182 @@
+/* Tab */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        width: 100vw;
+        overflow: hidden;
+      }
+    .bg {
+        background-size: cover;
+        height: 200px;
+    }
+    .sun-moon {
+        width: 100px;
+        height: 100px;
+        left: 20px;
+      }
+    .bstation {
+        left: 270px;
+      }
+      .signStick {
+        bottom: 39px;
+        left: 160px;
+        height: 50px;
+        width: 10px; 
+      }
+      .tr-sign {
+        height: 70px;
+        width: 40px;
+        bottom: 40px;
+        left: -15px;
+        gap: 4px;
+      }
+      .sign1 {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+      }
+      
+      .sign1 img {
+        height: 24px;
+        width: 24px;
+        object-fit: cover;
+      }
+      
+      .sign2 {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+      }
+      
+      .sign2 img {
+        height: 24px;
+        width: 24px;
+        object-fit: cover;
+      }
+    .road {
+        height: 240px;
+        width: 100vw;
+        bottom: -200px;
+      }
+      .transport {
+        bottom: -130px;
+        height: 400px;
+      }
+      
+    .bike {
+        width: 140px;
+        height: 120px;
+        margin-top: 40px;
+      }
+      .bike img {
+        width: 140px;
+        height: 120px;
+      }
+      .car {
+        width: 240px;
+        height: 100px;
+        margin-top: -30px;
+      }
+      .car img {
+        width: 240px;
+        height: 120px;
+      }      
+      .zebra {
+        width: 280px;
+        height: 200px;
+        top: 240px;
+      }
+      
+      .zebra img {
+        width: 280px;
+        height: 200px;
+      }
+      .line {
+        bottom: -30px;
+      }
+      .line1 {
+        width: 170px;
+        height: 20px;
+      }
+      
+      .line1 img {
+        width: 170px;
+        height: 20px;
+      }
+      .line2 {
+        width: 170px;
+        height: 20px;
+      }
+      
+      .line2 img {
+        width: 170px;
+        height: 20px;
+      }
+      .f-path {
+        bottom: -190px;
+      }
+      .f-path-l {
+        height: 100px;
+        width: 210px;
+      }
+      
+      .f-path-r {
+        height: 100px;
+        width: 210px;
+      }
+      .stick {
+        height: 140px;
+        width: 10px; 
+        bottom: -140px;
+        right: 100px;
+      }
+      .tr-light {
+        height: 140px;
+        width: 70px;
+        bottom: 130px;
+        gap: 14px;
+      }
+      .red {
+        height: 30px;
+        width: 30px;
+      }
+      .yellow {
+        height: 30px;
+        width: 30px;
+      }
+      .green {
+        height: 30px;
+        width: 30px;
+      }
+      .mobile {
+        bottom: -130px;
+        left: 120px;
+        height: 110px;
+        width: 200px;
+        gap: 4px;   
+      }
+      .hands {
+        width: 140px;
+        height: 100px;
+        position: absolute;
+        z-index: 3;
+        bottom: -110px;
+        left: 70px;
+      }
+  }  
+
+
+/* Big Laptop 1440px*/
+@media screen and (min-width: 1440px) {
+    body {
+        width: 100vw;
+        overflow: hidden;
+      }
+    .bg {
+        background-size: cover;
+        height: 50vh;
+    }
+    .bstation {
+        left: 1140px;
+      }
+  }
+  

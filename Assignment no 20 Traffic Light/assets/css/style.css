@@ -1,0 +1,567 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+.bg {
+  background-image: url(/assets/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 300px;
+  width: 100vw;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: background-color 4s ease;
+}
+
+.bg.dark::before {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sun-moon {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  left: 40px;
+  top: 4px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.sun-moon img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 14px #e5b34e) brightness(1);
+  transition: filter 10s ease-in;
+}
+
+.signStick {
+  height: 100px;
+  width: 10px;
+  background-color: black;
+  position: absolute;
+  bottom: 39px;
+  left: 160px;
+  z-index: 10;
+  border: 1px solid white;
+}
+
+.tr-sign {
+  background-color: black;
+  border-radius: 10px;
+  height: 110px;
+  width: 60px;
+  position: absolute;
+  bottom: 70px;
+  left: -25px;
+  z-index: 2;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.sign1 {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.sign1 img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
+.sign2 {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.sign2 img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
+.bstation {
+  height: 247px;
+  width: 260px;
+  position: absolute;
+  bottom: 0;
+  left: 510px;
+}
+
+.bstation img {
+  height: 220px;
+  width: 260px;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 12px #ffff);
+}
+
+.walk {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  height: 80px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.walk1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  height: 80px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.men,
+.men1 {
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  transform: translateY(-4%);
+  animation: men 20s linear infinite;
+}
+
+@keyframes men {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+.men1 {
+  animation: men1 10s linear infinite;
+  transform: scaleX(-1);
+}
+
+@keyframes men1 {
+  0% {
+    right: 4%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.men img {
+  width: 40px;
+  height: 80px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 4px #ffff);
+}
+
+.men1 img {
+  width: 40px;
+  height: 80px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 4px #ffff);
+}
+
+.boy {
+  width: 40px;
+  height: 60px;
+  position: absolute;
+  transform: translateY(34%);
+  animation: boy 20s linear infinite;
+}
+
+@keyframes boy {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.boy1 {
+  width: 40px;
+  height: 60px;
+  position: absolute;
+  margin-top: 20px;
+  animation: boy1 14s linear infinite;
+  transform: scaleX(-1);
+}
+
+@keyframes boy1 {
+  0% {
+    left: 2%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.boy img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 4px #ffff);
+}
+
+.boy1 img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  filter: drop-shadow(0px 0px 4px #ffff);
+}
+
+.transport {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -190px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.bike {
+  width: 200px;
+  height: 170px;
+  z-index: 3;
+  position: absolute;
+  margin-top: 20px;
+  top: 60%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+@keyframes moveRightY {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 20%;
+  }
+}
+
+@keyframes moveRight {
+  0% {
+    left: 20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.bike img {
+  width: 200px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.car {
+  width: 370px;
+  height: 170px;
+  margin-top: -100px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  animation: moveLightY 2s linear forwards;
+}
+
+@keyframes moveLeftY {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 10%;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    right: 30%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+
+.car img {
+  width: 370px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.zebra {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 180px;
+  z-index: 1;
+}
+
+.zebra img {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.line {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: -90px;
+  z-index: 1;
+  position: relative;
+}
+
+.line1 {
+  width: 400px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+}
+
+.line1 img {
+  width: 300px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.line2 {
+  width: 400px;
+  height: 30px;
+  position: absolute;
+  right: 0;
+}
+
+.line2 img {
+  width: 400px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.road {
+  background-color: black;
+  height: 308px;
+  width: 100vw;
+  position: absolute;
+  bottom: -268px;
+}
+
+.stick {
+  height: 200px;
+  width: 10px;
+  background-color: black;
+  position: absolute;
+  bottom: -240px;
+  right: 200px;
+  z-index: 3;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.tr-light {
+  background-color: black;
+  border-radius: 10px;
+  height: 200px;
+  width: 70px;
+  position: absolute;
+  bottom: 180px;
+  right: -32px;
+  z-index: 2;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.red {
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.yellow {
+  height: 40px;
+  width: 40px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.green {
+  height: 40px;
+  width: 40px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.mobile {
+  position: absolute;
+  bottom: -190px;
+  left: 170px;
+  background-color: black;
+  height: 110px;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  z-index: 3;
+}
+
+.screen {
+  background-color: white;
+  height: 100px;
+  width: 170px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  border: 1px dashed black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 1rem;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.m-red {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.m-yellow {
+  height: 20px;
+  width: 20px;
+  background-color: yellow;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.m-green {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+button {
+  width: 80px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid black;
+}
+
+.circle {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.hands {
+  width: 140px;
+  height: 120px;
+  position: absolute;
+  z-index: 3;
+  bottom: -190px;
+  left: 120px;
+  /* background-color: bisque; */
+}
+
+.hands img{
+  width: 100px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.f-path {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100vw;
+  position: absolute;
+  bottom: -260px;
+}
+
+.f-path-l {
+  background-color: #b0b0af;
+  height: 100px;
+  width: 400px;
+  border-top-right-radius: 20px;
+  border: 1px solid white;
+}
+
+.f-path-r {
+  background-color: #b0b0af;
+  height: 100px;
+  width: 400px;
+  border-top-left-radius: 20px;
+  border: 1px solid white;
+}
