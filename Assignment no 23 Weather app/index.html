@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-black h-screen w-full flex justify-center items-center">
+
+    <div style="box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);"
+        class="bg-white bg-gradient-to-b from-blue-400 to-white shadow-lg p-4 rounded-3xl w-full max-w-sm sm:max-w-sm mx-4 md:my-10">
+        <div class="search-container flex justify-center items-center gap-2 relative">
+            <input type="text" id="city" placeholder="Search City..."
+              class="focus:outline-none p-3 pl-10 rounded-2xl bg-[#E2F2F5] bg-opacity-40 placeholder-black w-full text-sm md:text-base"
+              onclick="showSuggestions()">
+            <i class="fa-solid fa-location-dot absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600"></i>
+            
+            <button id="search" class="bg-[#E2F2F5] bg-opacity-40 p-3 px-4 rounded-full hover:bg-opacity-60">
+              <i class="fa-solid fa-magnifying-glass font-bold"></i>
+            </button>
+            
+            <!-- Suggestions Dropdown with Glassmorphism -->
+            <div id="suggestions" class="absolute z-10 top-full mt-2 left-0 w-full ackdrop-blur-lg rounded-lg shadow-lg hidden">
+              <ul class="text-sm text-gray-700">
+                <li class="p-3 hover:bg-gray-100 rounded-md cursor-pointer border border-gray-300 bg-white" onclick="selectCity('Phoenix, United States')"><i class="fa-solid fa-location-dot text-gray-600 mr-2"></i>Phoenix, United States</li>
+                <li class="p-3 hover:bg-gray-100 rounded-md cursor-pointer border border-gray-300 bg-white" onclick="selectCity('Karachi, Pakistan')"><i class="fa-solid fa-location-dot text-gray-600 mr-2"></i>Karachi, Pakistan</li>
+                <li class="p-3 hover:bg-gray-100 rounded-md cursor-pointer border border-gray-300 bg-white" onclick="selectCity('New Delhi, India')"><i class="fa-solid fa-location-dot text-gray-600 mr-2"></i>New Delhi, India</li>
+                <li class="p-3 hover:bg-gray-100 rounded-md cursor-pointer border border-gray-300 bg-white" onclick="selectCity('Tehran, Iran')"><i class="fa-solid fa-location-dot text-gray-600 mr-2"></i>Tehran, Iran</li>
+                <li class="p-3 hover:bg-gray-100 rounded-md cursor-pointer border border-gray-300 bg-white" onclick="selectCity('Baghdad, Iraq')"><i class="fa-solid fa-location-dot text-gray-600 mr-2"></i>Baghdad, Iraq</li>
+
+              </ul>
+            </div>
+          </div>
+          
+        <div id="loader" class="loader hidden"></div>
+        <div id="weathercard" class="mt-6">
+            <!-- Dynamic Card -->
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+
+
+</html>
