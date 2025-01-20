@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Feature Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #6200ea;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #6200ea;
+            margin-bottom: 1rem;
+        }
+
+        pre {
+            background: #333;
+            color: #f4f4f9;
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JavaScript ES6 Features Documentation</h1>
+    </header>
+    <div class="container">
+
+        <section>
+            <h2>1. Closure</h2>
+            <p>A function can access variables from its parent scope even after the parent function has executed.</p>
+            <pre><code>function createCounter() {
+    let count = 0; // Local variable
+    return function () {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3</code></pre>
+        </section>
+
+        <section>
+            <h2>2. Destructuring</h2>
+            <p>Extract values from arrays or objects into variables easily.</p>
+            <pre><code>// Array destructuring
+const fruits = ["apple", "banana", "cherry"];
+const [first, second] = fruits;
+console.log(first); // apple
+console.log(second); // banana
+
+// Object destructuring
+const user = { name: "Ali", age: 22 };
+const { name, age } = user;
+console.log(name); // Ali
+console.log(age); // 22</code></pre>
+        </section>
+
+        <section>
+            <h2>3. Default Parameters</h2>
+            <p>Set default values for function parameters when arguments are missing.</p>
+            <pre><code>function greet(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+
+greet(); // Hello, Guest!
+greet("Ali"); // Hello, Ali!</code></pre>
+        </section>
+
+        <section>
+            <h2>4. Rest Parameter</h2>
+            <p>Accept unlimited arguments as an array.</p>
+            <pre><code>function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3)); // 6
+console.log(sum(10, 20, 30, 40)); // 100</code></pre>
+        </section>
+
+        <section>
+            <h2>5. Spread Operator</h2>
+            <p>Spread array or object values into new ones.</p>
+            <pre><code>// Array example
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];
+console.log(newNumbers); // [1, 2, 3, 4, 5]
+
+// Object example
+const user = { name: "Ali", age: 22 };
+const updatedUser = { ...user, city: "Karachi" };
+console.log(updatedUser); // { name: "Ali", age: 22, city: "Karachi" }</code></pre>
+        </section>
+
+        <section>
+            <h2>6. Enhanced Object Literals</h2>
+            <p>Create objects with cleaner syntax and dynamic property names.</p>
+            <pre><code>const name = "Ali";
+const age = 22;
+
+// Property shorthand
+const user = { name, age };
+console.log(user); // { name: "Ali", age: 22 }
+
+// Method shorthand
+const person = {
+    sayHi() {
+        console.log("Hi!");
+    },
+};
+person.sayHi(); // Hi!
+
+// Computed property names
+const key = "role";
+const employee = {
+    [key]: "Developer",
+};
+console.log(employee); // { role: "Developer" }</code></pre>
+        </section>
+
+    </div>
+</body>
+</html>

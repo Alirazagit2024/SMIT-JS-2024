@@ -1,0 +1,105 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-image: url("/assets/bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#quiz-container {
+  border: 1px solid white;
+  text-align: center;
+  color: white;
+  background: rgba(255, 255, 255, 0.1); /* Glassmorphism */
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  box-shadow: 14px 14px 10px rgba(0, 0, 0, 0.7);
+  width: 400px;
+  max-width: 90%;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #fff;
+}
+
+#flashcard {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 20px;
+}
+
+#question {
+  font-size: 1.3em;
+}
+
+#answer {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #ffd700; /* Gold color */
+}
+
+strong {
+  text-shadow: none;
+  color: black;
+}
+
+#timer {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+#controls button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+#controls button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#controls button:active {
+  transform: scale(0.95);
+}
+
+#start,
+#show-answer,
+#restart {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#next-question {
+  cursor: not-allowed;
+}
+
+/* Mobile specific background image */
+@media (max-width: 768px) {
+  body {
+    background-position: right;
+  }
+}
