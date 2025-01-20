@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: black;
+  color: #e0e0e0;
+}
+
+.container {
+  max-width: 1200px;
+  background: rgb(31, 31, 31);
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 77px 15px rgba(255,255,255,0.75);
+  -webkit-box-shadow: 0px 0px 77px 15px rgba(255,255,255,0.75);
+  -moz-box-shadow: 0px 0px 77px 15px rgba(255,255,255,0.75);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #00b0ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Input Group Flexbox Layout */
+.input-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.student-name-box, .dropdown-container, .batch-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.student-name-box input, .dropdown, .batch-container input {
+  margin-top: 10px;
+  padding: 12px;
+  border: 2px solid #00b0ff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.nameBtn {
+  background-color: #00b0ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 50px;
+  width: 160px; /* Increased width for the button */
+  align-self: center;
+}
+
+.nameBtn:hover {
+  background-color: #0091cc;
+}
+
+/* Table wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  text-align: center;
+  padding: 12px;
+  border: 2px solid #444;
+  cursor: grab;
+}
+
+table th {
+  border: none;
+  background-color: #00b0ff;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #242424;
+}
+
+table tr:hover {
+  background-color: #333;
+}
+
+table .deleteBtn {
+  cursor: pointer;
+}
+
+/* Email Box */
+.emailBox {
+  display: flex;
+  margin-top: 20px;
+}
+
+.emailBox input {
+  flex: 1;
+  padding: 12px;
+  margin-right: 10px;
+  border: 2px solid #00b0ff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.emailBox button {
+  padding: 12px 20px;
+  background-color: #00b0ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.emailBox button:hover {
+  background-color: #0091cc;
+}
+
+.emailsOutput {
+  display: none;
+  margin-top: 20px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.emailsOutput li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: lower-roman;
+  padding: 8px;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.emailsOutput li:hover {
+  background-color: #333;
+  cursor: grab;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .input-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .student-name-box, .dropdown-container, .batch-container {
+    width: 100%; /* Ensure inputs are full width */
+  }
+
+  .addBtn {
+    width: 100%;
+  }
+
+  .nameBtn {
+    width: 100%; /* Make button full width */
+    margin-top: 12px; /* Optional: gives some space between inputs and button */
+  }
+
+  table {
+    width: 170%;
+  }
+
+  .emailBox {
+    flex-direction: column;
+  }
+
+  .emailBox input, .emailBox button {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}

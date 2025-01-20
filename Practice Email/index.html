@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Email Box</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="email-box">
+      <div class="header">
+        <h1><i class="fas fa-users"></i> Student Details</h1>
+      </div>
+
+      <!-- Input fields to add student name, course, and batch number -->
+      <div class="input-group">
+        <div class="student-name-box">
+          <label for="name">Student Name:</label>
+          <input type="text" placeholder="Add student name" id="studentName">
+        </div>
+
+        <div class="dropdown-container">
+          <label for="itCourses" class="dropdown-label">Select Course Name:</label>
+          <select id="itCourses" class="dropdown">
+            <option value="Web Development">Web Development</option>
+            <option value="App Development">App Development</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Ai Ml">AI & ML</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Blockchain">Blockchain</option>
+          </select>
+        </div>
+        <div class="batch-container">
+          <label for="batch">Batch No:</label>
+          <input type="number" id="batch" placeholder="Enter your batch no">
+        </div>
+        
+        <!-- Add Name Button -->
+         <div class="addBtn">
+        <button class="nameBtn"><i class="fas fa-plus"></i> Add Name</button>
+      </div>
+      </div>
+
+      <!-- Table inside a div with overflow-x for mobile responsiveness -->
+      <div class="table-wrapper">
+        <table class="student-table">
+          <thead>
+            <tr>
+              <th>S. No</th>
+              <th>Roll No</th>
+              <th>Student Name</th>
+              <th>Course Name</th>
+              <th>Batch No</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="dataAdd">
+            <!-- Data Add -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Email input -->
+      <div class="emailBox">
+        <input type="email" class="email-input" placeholder="Enter your email" required>
+        <button class="send-button"><i class="fas fa-paper-plane"></i> Send Email</button>
+      </div>
+
+      <!-- Emails Output -->
+      <div class="emailsOutput"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
