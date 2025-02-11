@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Password</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase CDN -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- Logo -->
+    <link rel="icon" href="https://img.icons8.com/fluency/48/school.png">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Main Container -->
+    <div class="flex items-center justify-center min-h-screen px-4">
+        <div class="w-full max-w-lg p-4 space-y-4 bg-white rounded-lg shadow-lg">
+            <!-- Header Branding -->
+            <div class="text-center">
+                <img src="https://img.icons8.com/color/96/school.png" alt="School Logo" class="w-16 mx-auto">
+                <h1 class="text-2xl font-bold text-gray-700">Student Management System</h1>
+            </div>
+            <!-- New Password Form -->
+            <form onsubmit="event.preventDefault()" class="space-y-4">
+                <h2 class="text-xl text-center font-semibold text-black">New Password</h2>
+                <div>
+                    <label for="newPass" class="block mb-2 text-sm font-medium text-gray-600">New Password</label>
+                    <input id="newPass" type="password" class="input-field" placeholder="Enter new password"
+                        required>
+                </div>
+                <button type="submit" class="resetBtn w-full btn-primary">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

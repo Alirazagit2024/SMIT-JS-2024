@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase CDN -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- Logo -->
+    <link rel="icon" href="https://img.icons8.com/fluency/48/school.png">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Main Container -->
+    <div class="flex items-center justify-center min-h-screen px-4">
+        <div class="w-full max-w-lg p-4 space-y-4 bg-white rounded-lg shadow-lg">
+            <!-- Header Branding -->
+            <div class="text-center">
+                <img src="https://img.icons8.com/color/96/school.png" alt="School Logo" class="w-16 mx-auto">
+                <h1 class="text-2xl font-bold text-gray-700">Student Management System</h1>
+            </div>
+            <!-- Login Form -->
+            <form onsubmit="event.preventDefault()" id="loginForm" class="space-y-4">
+                <h2 class="text-xl text-center font-semibold text-black">Login to Your Account</h2>
+                <div>
+                    <label for="loginEmail" class="block mb-2 text-sm font-medium text-gray-600">Email</label>
+                    <input id="loginEmail" type="email" class="input-field" placeholder="Enter email" required>
+                </div>
+                <div>
+                    <label for="loginPassword" class="block mb-2 text-sm font-medium text-gray-600">Password</label>
+                    <input id="loginPassword" type="password" class="input-field" placeholder="Enter password" required>
+                </div>
+                <button id="loginBtn" type="submit" class="w-full btn-primary">Login</button>
+                <p class="text-center">Don't have an account?<a class="text-blue-600" href="index.html"> SignUp</a></p>
+                <p class="text-center"><a class="text-blue-600" href="forgetPassword.html">Reset Password</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
