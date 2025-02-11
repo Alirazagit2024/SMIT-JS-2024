@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviesHub</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!-- Logo -->
+     <link rel="icon" href="/assets/images/logo.png">
+    <!-- Supabase CDN -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-l from-red-600 via-red-500 to-black">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/assets/html/movieshub.html" id="up"
+                        class="text-2xl font-bold text-white bg-red-600 pl-1 py-1 rounded-sm shadow-lg hover:bg-red-700 transition duration-200 ease-in-out">
+                        Movies<span class="text-black bg-white px-2 py-1 rounded-sm ml-1">Hub</span>
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:block flex items-center w-[40vw] sm:w-[60vw] max-w-2xl relative">
+                    <input type="text" placeholder="Search"
+                        class="searchInput w-full px-4 py-2 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-black" />
+                    <!-- Search Icon -->
+                    <span id="search"
+                        class="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-black">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+
+                <!-- User Logo -->
+                <div class="flex items-center space-x-4 text-white text-lg">
+                    <button id="logoutBtn" type="submit" class="w-full flex justify-center items-center gap-2 p-2 px-3 rounded-lg text-white bg-black hover:bg-white hover:text-black"><i class="fas fa-user-circle text-xl"></i> Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container text-center mx-auto mt-7">
+        <div class="block lg:hidden mx-auto flex items-center w-[90vw] max-w-2xl relative">
+            <input type="text" placeholder="Search"
+                class="searchInput w-full px-4 py-2 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-black" />
+            <!-- Search Icon -->
+            <span id="search"
+                class="absolute cursor-pointer right-3 top-1/2 transform -translate-y-1/2 text-black">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
+        <div class="hide-scrollbar flex sm:flex-wrap justify-start sm:justify-center items-center gap-2 md:gap-4 overflow-x-auto m-4">
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Action">Action</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Adventure">Adventure</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Comedy">Comedy</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Drama">Drama</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Thriller">Thriller</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Romance">Romance</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Horror">Horror</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Sci-Fi">SciFi</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Mystery">Mystery</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Fantasy">Fantasy</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Crime">Crime</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Family">Family</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Animation">Animation</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Documentary">Documentary</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Musical">Musical</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="History">History</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Biography">Biography</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="War">War</button>
+
+            <button
+                class="category bg-white text-black border border-white hover:bg-black hover:text-white px-4 py-2 rounded-lg"
+                value="Sports">Sports</button>
+
+        </div>
+        <div id="movies" class="mt-7 flex justify-center items-center gap-5 flex-wrap mt-4">
+            <!-- Dynamic Posters -->
+        </div>
+        <!-- Modal -->
+        <div id="movieModal"
+            class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex items-center justify-center">
+            <div
+                class="hide-scrollbar bg-white rounded-lg w-[90vw] max-w-4xl p-4 relative flex flex-col sm:flex-row items-start gap-6 overflow-y-auto max-h-[90vh]">
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-2 right-4 text-gray-500 hover:text-gray-800"><i
+                        class="fa-solid fa-xmark text-2xl"></i></button>
+                <!-- Modal Content Container -->
+                <div id="modalContent" class="w-full flex flex-col sm:flex-row items-start gap-4 mt-6"></div>
+            </div>
+        </div>
+        <nav aria-label="Page navigation example">
+            <ul class="flex -space-x-px justify-center items-center text-sm my-6">
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="1">1</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="2">2</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="3">3</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="4">4</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="5">5</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="6">6</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="7">7</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="8">8</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="9">9</button></a>
+                </li>
+                <li>
+                    <a href="#up"><button
+                            class="num flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            value="10">10</button></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer class="bg-gradient-to-r from-red-600 via-red-500 to-black text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <!-- Logo -->
+                <div class="mb-4 sm:mb-0">
+                    <a href="/assets/html/movieshub.html"
+                        class="text-2xl font-bold text-white bg-black pl-2 py-1 rounded-sm shadow-lg hover:bg-gray-800 transition duration-200 ease-in-out">
+                        Movies<span class="text-black bg-white px-2 py-1 rounded-sm ml-1">Hub</span>
+                    </a>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white text-sm hover:text-yellow-400 transition duration-200">About Us</a>
+                    <a href="#" class="text-white text-sm hover:text-yellow-400 transition duration-200">Contact</a>
+                    <a href="#" class="text-white text-sm hover:text-yellow-400 transition duration-200">Privacy
+                        Policy</a>
+                    <a href="#" class="text-white text-sm hover:text-yellow-400 transition duration-200">Terms of
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-4 text-center text-sm text-gray-300">
+                &copy; 2025 Movies Hub. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

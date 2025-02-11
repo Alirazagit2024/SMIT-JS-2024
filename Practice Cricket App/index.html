@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Matches</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .loader {
+        border: 10px solid #f3f3f3;
+        border-top: 10px solid #5740E1;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 1s linear infinite;
+        margin: 40px auto;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<body class="bg-gray-900 text-white flex flex-col min-h-screen"
+    style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-700 py-8 shadow-md px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white">Live Cricket Updates</h1>
+            <p class="text-lg sm:text-xl mt-2 text-gray-200">Catch every moment of live cricket matches.</p>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <div class="py-6 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex justify-center">
+                <input type="text" placeholder="Search for matches..."
+                    class="input flex w-full px-6 py-3 rounded-l-md text-gray-700 bg-gray-200 border-0 focus:ring-2 focus:ring-indigo-500">
+                <button
+                    class="search px-6 py-3 bg-indigo-600 text-white font-semibold rounded-r-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matches Section -->
+    <section class="py-10">
+        <div class="cards max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-6">
+            <!-- Match Card -->
+        </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4 mt-auto text-center">
+        <p class="text-sm text-gray-400">© 2025 Cricket Live. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

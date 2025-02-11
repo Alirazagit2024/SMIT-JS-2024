@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionAI - 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .prompt-input:focus+.input-label,
+        .prompt-input:not(:placeholder-shown)+.input-label {
+            transform: translateY(-4.2rem) scale(0.9);
+            font-size: 1.4rem;
+            font-weight: bolder;
+            color: white;
+        }
+
+        .image-card:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .prompt-chip:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Mobile-first responsive adjustments */
+        @media (max-width: 640px) {
+            #popup>div {
+                max-width: 100vw;
+                height: 95dvh;
+            }
+
+            #popup-image {
+                max-width: 100vw;
+                padding: 0.25rem;
+            }
+        }
+
+        /* Prevent vertical overflow on short screens */
+        @media (max-height: 600px) {
+            #popup>div {
+                height: 98dvh;
+            }
+
+            #popup-image {
+                max-height: 94dvh;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 flex items-center justify-center p-4 text-gray-100">
+
+    <div class="glass-container w-full max-w-6xl p-8 transform transition-all duration-300 hover:shadow-2xl">
+        <!-- Header Section -->
+        <div class="text-center mb-10">
+            <div class="floating inline-block mb-6">
+                <div class="bg-gradient-to-r from-blue-500 to-cyan-400 p-4 rounded-2xl shadow-2xl">
+                    <i class='bx bx-brain text-4xl'></i>
+                </div>
+            </div>
+            <h1
+                class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent mb-2">
+                VisionAI
+            </h1>
+            <p class="text-gray-400">Transform text into stunning visuals using AI</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="space-y-8">
+            <!-- Input Group -->
+            <div class="relative">
+                <textarea id="promptInput"
+                    class="prompt-input w-full bg-gray-800/50 border-2 border-gray-700/50 rounded-xl p-6 pr-16 focus:border-blue-500 focus:ring-0 resize-none transition-all duration-300 h-40"
+                    placeholder=" "></textarea>
+                <label
+                    class="input-label absolute left-6 top-6 text-gray-400 pointer-events-none transition-all duration-300 origin-left">
+                    Describe your vision...
+                </label>
+                <button onclick="generateImage()"
+                    class="absolute right-6 bottom-6 bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg transition-all duration-300 hover:scale-110">
+                    <i class='bx bx-send text-xl'></i>
+                </button>
+            </div>
+            <div id="errorMessage" class="hidden p-4 bg-red-900/50 border border-red-700 rounded-xl text-red-300">
+            </div>
+
+            <!-- Progress Bar -->
+            <div id="progressBar" class="hidden h-2.5 bg-gray-800/50 rounded-full overflow-hidden">
+                <div
+                    class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-500 ease-out width-0">
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div id="imageContainer" class="flex justify-center items-center cursor-pointer hidden relative group">
+                <div class="absolute">
+                </div>
+                <img id="generatedImage"
+                    class="gallery-img w-full h-full md:w-80 md:h-72 rounded-xl transform transition-all duration-300">
+
+                <div id="downloadSection" class="absolute bottom-3 right-3 md:bottom-1 md:right-[35.7%]">
+                    <button onclick="downloadImage()"
+                        class="bg-gray-900/80 hover:bg-gray-900 border border-white px-2 py-1 rounded-lg backdrop-blur-sm transition-all duration-300">
+                        <i class='bx bx-download text-xl'></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status Indicators -->
+            <div id="loading" class="hidden flex flex-col items-center justify-center space-y-4 py-8">
+                <div class="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent"></div>
+                <p class="text-gray-400 font-medium">Crafting your masterpiece...</p>
+            </div>
+
+            <!-- Top Creations Gallery -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6 text-blue-400">Recent Masterpieces</h2>
+                <div
+                    class="flex sm:flex-wrap sm:justify-center sm:items-center overflow-x-auto hide-scrollbar gap-4 pb-4 scrollbar-hide">
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-1.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-2.jpg"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-3.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-4.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-5.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-6.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-7.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-8.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-9.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+                    </div>
+                    <div
+                        class="relative flex-shrink-0 image-card group w-48 h-48 rounded-xl overflow-hidden cursor-pointer">
+                        <img src="assets/images/pic-10.png"
+                            class="gallery-img w-full h-full object-cover transform group-hover:scale-105 transition-all duration-300">
+                        <div class="image-overlay absolute duration-300 p-4 flex justify-end items-end">
+                        </div>
+
+                        <!-- Popup Section with Tailwind CSS -->
+                        <div id="popup"
+                            class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-[999] hidden">
+                            <div class="relative w-full h-full flex items-center justify-center">
+                                <!-- Image Container -->
+                                <div
+                                    class="relative max-w-[90vw] max-h-[90vh] bg-black rounded-lg overflow-hidden flex items-center justify-center">
+                                    <!-- Close Button (Absolute on Image) -->
+                                    <button id="close"
+                                        class="absolute top-2 right-2 w-8 h-8 flex items-center justify-center border bg-black/50 text-white text-2xl rounded-full z-50 hover:bg-black/70 active:bg-black/90 transition">
+                                        <i class="bx bx-x text-2xl"></i>
+                                    </button>
+
+                                    <img id="popup-image" class="max-w-full max-h-full object-contain" src=""
+                                        alt="AI Image" loading="lazy">
+                                </div>
+
+                                <!-- Optional Loading State -->
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 hidden"
+                                    id="popup-loading">
+                                    <div
+                                        class="animate-spin rounded-full h-12 w-12 border-4 border-cyan-400 border-t-transparent">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="mt-12 text-center text-gray-400 text-sm">
+            <p>Powered by AI Magic • <span class="text-blue-400">#CreateWithVisionAI</span></p>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>

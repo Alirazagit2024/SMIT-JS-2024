@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviesHub</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Supabase CDN -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- Logo -->
+     <link rel="icon" href="/assets/images/logo.png">
+</head>
+<style>
+   body { background: url(/assets/images/bg.jpg) center/cover no-repeat; }
+</style>
+
+<body class="bg-gray-100">
+    <!-- Main Container -->
+    <div class="flex inset-0 bg-black bg-opacity-70 items-center justify-center min-h-screen px-4">
+        <div class="w-full max-w-sm p-8 space-y-4 inset-0 bg-black bg-opacity-50 text-white rounded-lg shadow-lg">
+            <!-- Signup Form -->
+            <form onsubmit="event.preventDefault()" id="signupForm" class="space-y-4">
+                <h2 class="text-4xl font-bold text-white">Sign Up</h2>
+                <div>
+                    <input id="signupName" type="text" class="input-field focus:outline-none focus:ring-white placeholder:text-[#B8B8B8] inset-0 bg-black bg-opacity-70" placeholder="Enter Name" required>
+                </div>
+                <div>
+                    <input id="signupEmail" type="email" class="input-field focus:outline-none focus:ring-white placeholder:text-[#B8B8B8] inset-0 bg-black bg-opacity-70" placeholder="Enter email" required>
+                </div>
+                <div>
+                    <input id="signupPassword" type="password" class="input-field focus:outline-none focus:ring-white placeholder:text-[#B8B8B8] inset-0 bg-black bg-opacity-70" placeholder="Enter password"
+                        required>
+                </div>
+                <button type="submit" id="signupBtn" class="w-full py-2 rounded-lg text-white bg-[#E50914]">Sign Up</button>
+                <p class="text-center text-white">Already have an account?<a class="text-blue-600" href="/assets/html/login.html"> Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
